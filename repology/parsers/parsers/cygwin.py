@@ -43,6 +43,9 @@ class CygwinParser(Parser):
                 if 'homepage' in packagedata:
                     pkg.add_homepages(packagedata['homepage'])
 
+                if 'license' in packagedata:
+                    pkg.add_licenses(packagedata['license'])  # a SPDX license expression
+
                 for maturity in ['stable', 'test']:
                     if maturity not in packagedata['versions']:
                         continue
